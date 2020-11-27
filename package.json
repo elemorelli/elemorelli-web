@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd hugo server -D"
+    "dev": "env-cmd hugo server -D",
+    "build": "env-cmd hugo -D"
   },
   "repository": {
     "type": "git",
