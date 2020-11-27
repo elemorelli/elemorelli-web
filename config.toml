@@ -1,3 +1,23 @@
 baseURL = "https://www.elemorelli.com/"
-languageCode = "en-es"
+languageCode = "en-us"
 title = "Ele Morelli - Web Developer"
+
+[params]
+    mainbg = "https://source.unsplash.com/random/1920x1080"
+    name = "John Doe"
+    mainTitle = "WIP Title"
+    mainText = "WIP"
+
+[menus]
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "#about"
+    [[menu.main]]
+        identifier = "skills"
+        name = "Skills"
+        url = "#skills"
+    [[menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "#projects"
