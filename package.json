@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
-    "dev": "parcel serve ./src/index.html",
+    "clean": "rimraf .parcel-cache dist",
+    "dev": "npm run clean --silent && parcel serve ./src/index.html",
     "build": "parcel build ./src/index.html"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "parcel": "^2.0.0-nightly.481",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.30.0"
   }
 }
