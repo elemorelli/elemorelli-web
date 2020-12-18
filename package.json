@@ -2,24 +2,20 @@
   "name": "elemorelli-web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
-    "dev": "env-cmd hugo server -D",
-    "build": "env-cmd hugo -D"
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elemorelli/elemorelli-blog.git"
+    "url": "git+https://github.com/elemorelli/elemorelli-web.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eleazar Morelli Sangil",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/elemorelli/elemorelli-blog/issues"
-  },
-  "homepage": "https://github.com/elemorelli/elemorelli-blog#readme",
+  "homepage": "https://www.elemorelli.com/",
   "devDependencies": {
-    "env-cmd": "^10.1.0",
-    "hugo-cli": "^0.11.0"
+    "parcel": "^2.0.0-nightly.481"
   }
 }
