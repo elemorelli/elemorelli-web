@@ -1,0 +1,33 @@
+.contact {
+  min-height: 60rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact__form {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea {
+    padding: $s-size;
+    margin-bottom: $s-size;
+  }
+  button {
+    height: $xl-size;
+    width: 33%;
+    align-self: center;
+
+    background: $teal;
+    color: white;
+    border: none;
+    display: inline-block;
+    padding: $s-size;
+    line-height: 1;
+    font-weight: 300;
+    font-size: $font-size-large;
+    text-decoration: none;
+  }
+}
