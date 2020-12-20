@@ -17,8 +17,8 @@
   "license": "ISC",
   "homepage": "https://www.elemorelli.com/",
   "devDependencies": {
-    "eslint": "^7.15.0",
-    "eslint-config-prettier": "^7.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
     "kill-port": "^1.6.1",
     "node-normalize-scss": "^8.1.2",
     "parcel": "^2.0.0-nightly.481",
