@@ -10,24 +10,32 @@
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  input,
-  textarea {
+  > input,
+  > textarea {
     padding: $s-size;
     margin-bottom: $s-size;
   }
-  button {
-    height: $xl-size;
-    width: 33%;
-    align-self: center;
+}
 
-    background: $teal;
-    color: white;
-    border: none;
-    display: inline-block;
-    padding: $s-size;
-    line-height: 1;
-    font-weight: 300;
-    font-size: $font-size-large;
-    text-decoration: none;
+.contact__form__button {
+  height: $xl-size;
+  width: 33%;
+  align-self: center;
+  background: $teal;
+  box-shadow: 0 4px darken($teal, 10%);
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  padding: $s-size;
+  line-height: 1;
+  font-weight: 300;
+  font-size: $font-size-large;
+  text-decoration: none;
+  &:active {
+    box-shadow: 0 1px darken($teal, 10%);
+    transform: translateY(3px);
   }
 }
