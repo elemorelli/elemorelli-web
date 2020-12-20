@@ -34,7 +34,11 @@
   font-weight: 300;
   font-size: $font-size-large;
   text-decoration: none;
-  &:active {
+  &:disabled {
+    background: $grey;
+    box-shadow: 0 4px darken($grey, 10%);
+  }
+  &:not(:disabled):active {
     box-shadow: 0 1px darken($teal, 10%);
     transform: translateY(3px);
   }
