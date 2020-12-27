@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "kill-port 1234 && rimraf .parcel-cache dist",
     "dev": "npm run clean --silent && parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "npm run clean --silent && parcel build ./src/index.html"
   },
   "repository": {
     "type": "git",
