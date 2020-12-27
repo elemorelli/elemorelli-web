@@ -1,15 +1,6 @@
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-regular.woff2") format("woff2"), url("../fonts/lato-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "overpass-mono";
-  src: url("../fonts/overpass-mono-regular.woff2") format("woff2"),
-    url("../fonts/overpass-mono-regular.woff") format("woff");
-}
 
 @import "normalize.css";
+@import "./fonts";
 @import "./variables";
 @import "./header";
 @import "./logo";
@@ -31,7 +22,7 @@ html {
 body {
   color: $dark-grey;
   line-height: 1.6;
-  font-family: 'Lato', Helvetica, 'Open Sans', sans-serif;
+  font-family: $lato;
   font-size: $m-size;
   background-color: $white;
 }
