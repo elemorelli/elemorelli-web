@@ -1,22 +1,22 @@
-import Head from 'next/head'
-import Layout from '../../../components/layout'
-import { getAllPostIds, getPostData } from '../../../lib/posts'
+import Head from "next/head";
+import Layout from "../../../components/layout";
+import { getAllPostIds, getPostData } from "../../../lib/posts";
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
     paths,
-    fallback: false
-  }
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {
     props: {
-      postData
-    }
-  }
+      postData,
+    },
+  };
 }
 
 export default function Post({ postData }) {
@@ -33,5 +33,5 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  )
+  );
 }

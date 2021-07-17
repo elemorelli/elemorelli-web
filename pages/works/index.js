@@ -1,15 +1,15 @@
-import Layout from '../../components/layout'
-import { getSortedPostsData } from '../../lib/posts'
-import Link from 'next/link'
-import Date from '../../components/date'
+import Layout from "../../components/layout";
+import { getSortedPostsData } from "../../lib/posts";
+import Link from "next/link";
+import Date from "../../components/date";
 
 export async function getStaticProps() {
-  const worksData = getSortedPostsData()
+  const worksData = getSortedPostsData();
   return {
     props: {
-      worksData
-    }
-  }
+      worksData,
+    },
+  };
 }
 
 export default function Pepe({ worksData }) {
@@ -33,5 +33,5 @@ export default function Pepe({ worksData }) {
         </ul>
       </section>
     </Layout>
-  )
+  );
 }

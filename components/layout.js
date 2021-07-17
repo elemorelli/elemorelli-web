@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="text-gray-600">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Ele Morelli's personal web" />
