@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
-    <div className="text-gray-600 container">
+    <div className="container max-w-4xl mx-auto text-gray-600">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Ele Morelli's personal web" />
@@ -17,14 +17,14 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <div>
+      <header>
         <nav>
           <ol className="flex justify-end">
             <li className="mr-auto">
               <Link href="/">Ele Morelli</Link>
             </li>
             <li className="mx-2">
-              <Link href="/works">Works</Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li className="mx-2">
               <Link href="/blog">Blog</Link>
@@ -37,11 +37,11 @@ export default function Layout({ children }) {
             </li>
           </ol>
         </nav>
+      </header>
 
-        <main >{children}</main>
+      <main>{children}</main>
 
-        <footer>Copyright blabla</footer>
-      </div>
+      <footer>Copyright blabla</footer>
     </div>
   );
 }
