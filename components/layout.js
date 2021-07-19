@@ -19,29 +19,35 @@ export default function Layout({ children }) {
 
       <header>
         <nav>
-          <ol className="flex justify-end">
-            <li className="mr-auto">
-              <Link href="/">Ele Morelli</Link>
-            </li>
+          <Link href="/">
+            <h1>Ele Morelli</h1>
+          </Link>
+          <ul className="flex justify-end">
             <li className="mx-2">
-              <Link href="/projects">Projects</Link>
+              <Link href="/projects">Proyectos</Link>
             </li>
             <li className="mx-2">
               <Link href="/blog">Blog</Link>
             </li>
             <li className="mx-2">
-              <a href="https://github.com/elemorelli">GitHub</a>
+              <Link href="/#contact">Contacto</Link>
             </li>
-            <li className="mx-2">
-              <a href="https://www.linkedin.com/in/elemorelli/">Linkedin</a>
-            </li>
-          </ol>
+          </ul>
         </nav>
       </header>
 
       <main>{children}</main>
 
-      <footer>Copyright blabla</footer>
+      <footer>
+        <ul className="flex">
+          <li className="mx-2">
+            <a href="https://github.com/elemorelli">GitHub</a>
+          </li>
+          <li className="mx-2">
+            <a href="https://www.linkedin.com/in/elemorelli/">Linkedin</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }
