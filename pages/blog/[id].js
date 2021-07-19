@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Layout from "../../../components/layout";
-import { getAllPostIds, getPostData } from "../../../lib/posts";
+import Layout from "../../components/layout";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -26,10 +26,11 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1>{postData.title}</h1>
+        <h2 className="text-4xl font-bold">{postData.title}</h2>
         <div>
           <Date dateString={postData.date} />
         </div>
+        <br/>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>

@@ -19,15 +19,17 @@ export default function Blog({ postsData }) {
         <h2 className="text-4xl font-bold">Blog</h2>
         <h3 className="text-xl">Latest posts</h3>
         <ul>
-          {postsData.map(({ id, date, title }) => (
+          {postsData.map(({ id, date, title, summary }) => (
             <li key={id}>
-              <Link href={`blog/posts/${id}`}>
+              <Link href={`blog/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
               <small>
                 <Date dateString={date} />
               </small>
+              <div>{summary}</div>
+              <br />
             </li>
           ))}
         </ul>

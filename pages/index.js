@@ -1,5 +1,8 @@
 import { useEffect } from "react";
+import About from "../components/about";
+import Contact from "../components/contact";
 import Layout from "../components/layout";
+import Presentation from "../components/presentation";
 
 function sleep(ms = 150) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -21,14 +24,13 @@ const typeTextPrompt = async (element, text) => {
   }
 };
 
-const iterateTypingWords = async () => {
+const typingWordsLoop = async () => {
   const textPrompt = document.getElementById("text-prompt");
   const words = [
     "programador full-stack.",
     "motociclista novato.",
     "entusiasta de la impresión 3D.",
     "viajero.",
-    "gamer cuando sobra tiempo.",
     "desarrollador web.",
   ];
 
@@ -52,64 +54,16 @@ const iterateTypingWords = async () => {
 
 export default function Home() {
   useEffect(() => {
-    iterateTypingWords();
+    typingWordsLoop();
   }, []);
 
   return (
     <Layout>
-      <section className="text-gray-800 h-screen">
-        <h1 className="text-6xl text-center">Hola!</h1>
-        <h2 className="text-4xl text-center">Soy Eleazar. Soy un</h2>
-        <p className="text-xl text-center font-mono">
-          <span id="text-prompt">desarrollador web.</span>
-          <span className="inline-block animate-blink">|</span>
-        </p>
-      </section>
+      <Presentation />
 
-      <section className="h-screen bg-gray-400">
-        <p className="mb-10">
-          Lorem ipsum dolor sit amet, his id sapientem scribentur, quod cetero fastidii eos ex. Cum delectus temporibus
-          cu, his hinc inciderint delicatissimi at. Fierent epicurei legendos an usu, in quaerendum reprehendunt nec. Eu
-          mea fierent neglegentur, an est commune aliquando deterruisset, nec ad veniam dictas blandit.
-        </p>
-        <p className="mb-10">
-          Ne eos patrioque voluptatum. Vix zril utroque ut. Idque decore pro ut. Ex aliquam deleniti mei. Pri in
-          eleifend persecuti ullamcorper, eripuit admodum qui cu.
-        </p>
-        <p>
-          Duo at dolore insolens explicari. An vis sint cotidieque consequuntur, an mutat vivendo eam. An modo platonem
-          omittantur vis, nisl vituperata ei cum. Veritus persequeris pro te, ea pro iudicabit conclusionemque. Vix
-          veritus accusamus cu, ne qui vide vituperatoribus, probatus partiendo consulatu nam eu.
-        </p>
-      </section>
+      <About />
 
-      <section id="contact" className="h-60">
-        <h2>Charlemos!</h2>
-        <p>Interesado en trabajar conmigo? Contame sobre tu proyecto y vemos que se puede hacer.</p>
-        <form method="post">
-          <label>
-            Nombre <input type="text" name="name" required />
-          </label>
-
-          <label>
-            Email <input type="email" name="email" required />
-          </label>
-
-          <label>
-            Teléfono <input type="phone" name="phone" />
-          </label>
-
-          <label>
-            Website <input type="text" name="website" />
-          </label>
-
-          <label>
-            Website <textarea name="message" required></textarea>
-          </label>
-
-          <input type="submit" value="Enviar!"></input>
-        </form>
-      </section>
+      <Contact />
     </Layout>
   );
 }

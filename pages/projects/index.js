@@ -17,16 +17,17 @@ export default function Projects({ projectsData }) {
   return (
     <Layout>
       <section>
-        <h2>Projects</h2>
-        <h3>Some of my projects</h3>
-        <div>
-          {projectsData.map(({ id, title, description, screenshot }) => (
-            <div key={id} className="bg-white inline-flex rounded overflow-hidden shadow mx-2">
+        <h2 className="text-4xl font-bold">Proyectos</h2>
+        <h3 className="text-xl">Algunos de los trabajos que realicé</h3>
+
+        <div className="grid grid-cols-3 gap-4">
+          {projectsData.map(({ id, title, summary, screenshot }) => (
+            <div key={id} className="bg-white rounded overflow-hidden shadow">
               <Link href={`projects/${id}`}>
-                <div className="w-64">
-                  <Image src={screenshot} height="256" width="256" />
+                <div>
+                  <Image src={screenshot} height="400" width="400" />
                   <p className="text-center my-2 font-bold">{title}</p>
-                  <p className="m-2 text-sm">{description}</p>
+                  <p className="m-2 text-sm">{summary}</p>
                 </div>
               </Link>
               <br />

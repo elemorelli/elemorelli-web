@@ -26,10 +26,11 @@ export default function Project({ projectData }) {
         <title>{projectData.title}</title>
       </Head>
       <article>
-        <h1>{projectData.title}</h1>
+        <h2 className="text-4xl font-bold">{projectData.title}</h2>
         <div>
           <Date dateString={projectData.date} />
         </div>
+        <br/>
         <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
       </article>
     </Layout>

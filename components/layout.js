@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+import Footer from "./footer";
+import Header from "./header";
 
 export default function Layout({ children }) {
   return (
@@ -17,37 +18,10 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <header>
-        <nav>
-          <Link href="/">
-            <h1>Ele Morelli</h1>
-          </Link>
-          <ul className="flex justify-end">
-            <li className="mx-2">
-              <Link href="/projects">Proyectos</Link>
-            </li>
-            <li className="mx-2">
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li className="mx-2">
-              <Link href="/#contact">Contacto</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+      <Header />
       <main>{children}</main>
 
-      <footer>
-        <ul className="flex">
-          <li className="mx-2">
-            <a href="https://github.com/elemorelli">GitHub</a>
-          </li>
-          <li className="mx-2">
-            <a href="https://www.linkedin.com/in/elemorelli/">Linkedin</a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 }
