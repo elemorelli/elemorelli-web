@@ -1,3 +1,6 @@
+import Input from "./input";
+import TextArea from "./text-area";
+
 export default function Contact() {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,30 +37,20 @@ export default function Contact() {
     <section id="contact" className="px-20 py-6">
       <h2 className="text-4xl py-4">Charlemos!</h2>
       <p className="text-xl pb-4">Interesado en trabajar conmigo?</p>
-      <p className="text-xl pb-4">Contame sobre tu proyecto y vemos que se puede hacer.</p>
+      <p className="text-xl pb-8">Contame sobre tu proyecto y vemos que se puede hacer.</p>
 
       <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
-        <label className="col-span-2 md:col-span-1">
-          Nombre* <input type="text" name="name" required className="w-full" />
-        </label>
+        <Input name="name" type="text" text="Nombre" required />
 
-        <label className="col-span-2 md:col-span-1">
-          Email* <input type="email" name="email" required className="w-full" />
-        </label>
+        <Input name="email" type="email" text="Email" required />
 
-        <label className="col-span-2 md:col-span-1">
-          Teléfono <input type="phone" name="phone" className="w-full" />
-        </label>
+        <Input name="phone" type="phone" text="Teléfono" />
 
-        <label className="col-span-2 md:col-span-1">
-          Website <input type="text" name="website" className="w-full" />
-        </label>
+        <Input name="website" type="text" text="Website" />
 
-        <label className="col-span-2">
-          Mensaje* <textarea name="message" required className="w-full"></textarea>
-        </label>
+        <TextArea name="message" text="Mensaje" />
 
-        <input className="col-span-2 w-6/12 m-auto" type="submit" value="Enviar!"></input>
+        <input className="col-span-2 w-6/12 h-8 m-auto" type="submit" value="Enviar!"></input>
 
         <p id="error-message"></p>
       </form>
