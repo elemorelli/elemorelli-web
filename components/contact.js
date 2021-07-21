@@ -34,12 +34,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-20 py-6">
+    <section id="contact" className="px-20 py-6 bg-gray-200">
       <h2 className="text-4xl py-4">Charlemos!</h2>
       <p className="text-xl pb-4">Interesado en trabajar conmigo?</p>
       <p className="text-xl pb-8">Contame sobre tu proyecto y vemos que se puede hacer.</p>
 
-      <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
+      <form className="grid grid-cols-2 gap-6" onSubmit={handleSubmit}>
         <Input name="name" type="text" text="Nombre" required />
 
         <Input name="email" type="email" text="Email" required />
@@ -48,7 +48,7 @@ export default function Contact() {
 
         <Input name="website" type="text" text="Website" />
 
-        <TextArea name="message" text="Mensaje" />
+        <TextArea name="message" text="Mensaje" required />
 
         <input className="col-span-2 w-6/12 h-8 m-auto" type="submit" value="Enviar!"></input>
 
