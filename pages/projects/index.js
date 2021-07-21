@@ -16,7 +16,11 @@ export async function getStaticProps() {
 export default function Projects({ projectsData }) {
   return (
     <Layout>
-      <section className="pt-10">
+      <section
+        className="mx-auto
+      max-w-screen-sm
+      md:max-w-screen-md"
+      >
         <h2 className="text-4xl font-bold p-4">Proyectos</h2>
         <h3 className="text-xl p-4">Algunos de los trabajos en los que trabajé</h3>
 
@@ -35,7 +39,7 @@ export default function Projects({ projectsData }) {
                     col-start-1 col-end-2
                     md:col-start-1 md:col-end-4"
                   >
-                    <Image src={screenshot} layout="fill"/>
+                    <Image src={screenshot} layout="fill" />
                   </div>
                   <div
                     className="flex flex-col px-4
