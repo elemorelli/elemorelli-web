@@ -1,13 +1,12 @@
 import About from "../components/about";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
-import Presentation from "../components/presentation";
+import Intro from "../components/intro";
 
 export default function Home() {
-
   return (
     <Layout>
-      <Presentation />
+      <Intro />
 
       <About />
 

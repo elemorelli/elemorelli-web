@@ -4,7 +4,7 @@ import Header from "./header";
 
 export default function Layout({ children }) {
   return (
-    <div className="container max-w-4xl mx-auto text-gray-600">
+    <div className="text-gray-600">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Ele Morelli's personal web" />

@@ -9,7 +9,9 @@ class CustomDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Nunito" rel="stylesheet" />
+        </Head>
         <body className="bg-gray-300">
           <Main />
           <NextScript />

@@ -14,6 +14,28 @@ module.exports = {
       animation: {
         blink: "blink .5s linear infinite alternate",
       },
+      backgroundImage: () => ({
+        hero: "url('/images/hero.jpg')",
+      }),
+      fontFamily: {
+        sans: [
+          "Nunito",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji",
+        ],
+      },
     },
   },
   variants: {

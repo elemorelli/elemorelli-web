@@ -22,7 +22,7 @@ export default function Projects({ projectsData }) {
 
         <div className="grid grid-cols-3 gap-4">
           {projectsData.map(({ id, title, summary, screenshot }) => (
-            <div key={id} className="bg-white rounded overflow-hidden shadow">
+            <div key={id} className="bg-white rounded-lg overflow-hidden shadow-xl cursor-pointer">
               <Link href={`projects/${id}`}>
                 <div>
                   <Image src={screenshot} height="400" width="400" />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect } from "react";
 
 function sleep(ms = 150) {
@@ -48,19 +49,32 @@ const typingWordsLoop = async () => {
   }
 };
 
-export default function Presentation() {
+export default function Intro() {
   useEffect(() => {
-    typingWordsLoop();
+    // typingWordsLoop();
   }, []);
 
   return (
-    <section className="text-gray-800 h-screen">
-      <h1 className="text-6xl text-center">Hola!</h1>
-      <h2 className="text-4xl text-center">Soy Eleazar. Soy un</h2>
-      <p className="text-xl text-center font-mono">
-        <span id="text-prompt">desarrollador web.</span>
-        <span className="inline-block animate-blink">|</span>
-      </p>
+    <section className="text-gray-800 h-screen bg-center bg-cover flex items-center">
+      {/* bg-hero */}
+      <div className="w-full">
+        <h1 className="text-6xl text-center mb-4">Hola!</h1>
+        <h2 className="text-4xl text-center mb-4">Me llamo Eleazar.</h2>
+        <p className="text-xl text-center mb-8">
+          <span>Soy un </span>
+          <span id="text-prompt" className="font-mono">
+            desarrollador web.
+          </span>
+          <span className="inline-block animate-blink font-mono">|</span>
+        </p>
+        <div className="flex justify-center">
+          <Link href="/#contact">
+            <button className="text-center border-2 border-black rounded-full cursor-pointer px-4 py-2">
+              Estoy aceptando nuevos proyectos
+            </button>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }
