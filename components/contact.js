@@ -50,7 +50,11 @@ export default function Contact() {
 
         <TextArea name="message" text="Mensaje" required />
 
-        <input className="col-span-2 w-6/12 h-8 m-auto" type="submit" value="Enviar!"></input>
+        <input
+          className="col-span-2 w-6/12 h-8 m-auto border-2 rounded-lg shadow border-gray-700"
+          type="submit"
+          value="Enviar!"
+        ></input>
 
         <p id="error-message"></p>
       </form>
