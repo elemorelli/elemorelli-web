@@ -40,8 +40,13 @@ export default function Projects({ projectsData }) {
                     col-start-1 col-end-2
                     md:col-start-1 md:col-end-3 md:h-48"
                 >
-                  <Link href={`projects/${id}`}>
-                    <Image src={screenshot} layout="fill" className="object-cover cursor-pointer" />
+                  <Link href={`projects/${id}`} passHref>
+                    <Image
+                      src={screenshot}
+                      alt={`${title} screenshot`}
+                      layout="fill"
+                      className="object-cover cursor-pointer"
+                    />
                   </Link>
                 </div>
 

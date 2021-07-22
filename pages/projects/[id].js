@@ -35,7 +35,7 @@ export default function Project({ projectData }) {
         <h2 className="text-4xl font-bold px-12 py-10">{projectData.title}</h2>
 
         <div className="relative h-96 w-96 mx-auto rounded-md overflow-hidden shadow-lg">
-          <Image src={projectData.screenshot} layout="fill" />
+          <Image src={projectData.screenshot} alt={`${projectData.title} screenshot`} layout="fill" />
         </div>
 
         <main className="px-12 py-8">
