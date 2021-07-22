@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 @layer base {
-  @import url('syntax.css');
+  @import url("syntax.css");
 }
