@@ -2,7 +2,6 @@ import Layout from "../../components/layout";
 import { getSortedProjectsData } from "../../lib/projects";
 import Link from "next/link";
 import Image from "next/image";
-import Date from "../../components/date";
 
 export async function getStaticProps() {
   const projectsData = getSortedProjectsData();
@@ -18,13 +17,12 @@ export default function Projects({ projectsData }) {
     <Layout>
       <section
         className="mx-auto
-      max-w-screen-sm
-      md:max-w-screen-md"
+        max-w-screen-sm
+        md:max-w-screen-md"
       >
-        <h2 className="text-4xl font-bold p-4">Proyectos</h2>
-        <h3 className="text-xl p-4">Algunos de los trabajos en los que trabajé</h3>
+        <h2 className="text-4xl font-bold px-12 py-10">Proyectos</h2>
 
-        <div className="grid grid-cols-3 gap-6 px-6">
+        <div className="grid grid-cols-3 gap-6 px-12">
           {projectsData.map(({ id, title, summary, screenshot }) => (
             <Link href={`projects/${id}`}>
               <div

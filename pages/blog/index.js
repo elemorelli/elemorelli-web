@@ -22,6 +22,7 @@ export default function Blog({ postsData }) {
         md:max-w-screen-md"
       >
         <h2 className="text-4xl font-bold px-12 py-10">Blog</h2>
+
         <ul className="px-12">
           {postsData.map(({ id, date, title, summary, readingTime }) => (
             <li key={id} className="pb-12">
