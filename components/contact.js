@@ -34,7 +34,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-20 py-6 bg-gray-200">
+    <section id="contact" className="px-20 py-6 bg-gray-300">
       <h2 className="text-4xl py-4">Charlemos!</h2>
       <p className="text-xl pb-4">Interesado en trabajar conmigo?</p>
       <p className="text-xl pb-8">Contame sobre tu proyecto y vemos que se puede hacer.</p>
@@ -44,7 +44,7 @@ export default function Contact() {
 
         <Input name="email" type="email" text="Email" required />
 
-        <Input name="phone" type="phone" text="Teléfono" />
+        <Input name="phone" type="tel" text="Teléfono" />
 
         <Input name="website" type="text" text="Website" />
 

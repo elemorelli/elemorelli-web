@@ -1,8 +1,11 @@
 export default function Footer() {
   return (
-    <footer className="flex justify-between px-6 py-2 ">
-      <p>Copyright {new Date().getFullYear()} Eleazar Morelli Sangil</p>
-      <ul className="flex justify-between w-52">
+    <footer className="flex justify-between p-6 bg-gray-200 ">
+      <div>
+        <p className="inline-block">Copyright {new Date().getFullYear()}</p>{" "}
+        <p className="inline-block">Eleazar Morelli Sangil</p>
+      </div>
+      <ul className="flex justify-between items-center w-52">
         <li>
           <a href="https://github.com/elemorelli">GitHub</a>
         </li>

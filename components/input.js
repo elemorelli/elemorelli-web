@@ -7,10 +7,11 @@ export default function Input({ name, type, text, required }) {
         type={type}
         required={required}
         placeholder={text}
-        className="peer placeholder-transparent w-full h-10 px-2
-        bg-black bg-opacity-10
-        border-none rounded-md shadow-inner"
+        className="peer placeholder-transparent w-full rounded-md
+        bg-gray-600 bg-opacity-20
+        focus:border-gray-500 focus:bg-opacity-10 focus:ring-0"
       />
+
       <label
         htmlFor={name}
         className="absolute transition-all px-2

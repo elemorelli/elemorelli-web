@@ -21,10 +21,10 @@ export default function Blog({ postsData }) {
         max-w-screen-sm
         md:max-w-screen-md"
       >
-        <h2 className="text-4xl font-bold p-4 mb-6">Blog</h2>
-        <ul className="mx-8">
+        <h2 className="text-4xl font-bold px-12 py-10">Blog</h2>
+        <ul className="px-12">
           {postsData.map(({ id, date, title, summary, readingTime }) => (
-            <li key={id} className="mb-12">
+            <li key={id} className="pb-12">
               <a className="text-2xl underline">
                 <Link href={`blog/${id}`}>{title}</Link>
               </a>

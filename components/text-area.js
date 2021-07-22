@@ -6,9 +6,9 @@ export default function TextArea({ name, text, required }) {
         name={name}
         required={required}
         placeholder={text}
-        className="peer placeholder-transparent w-full h-28 px-2
-        bg-black bg-opacity-10
-        border-none rounded-md shadow-inner"
+        className="peer placeholder-transparent w-full rounded-md h-28 
+        bg-gray-600 bg-opacity-20
+        focus:border-gray-500 focus:bg-opacity-10 focus:ring-0"
       />
       <label
         htmlFor={name}

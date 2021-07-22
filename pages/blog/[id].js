@@ -34,7 +34,7 @@ export default function Post({ postData }) {
         md:max-w-screen-md"
       >
         <h2 className="text-4xl font-bold px-12 py-10">{postData.title}</h2>
-        <main className="px-12">
+        <main className="px-12 pb-12">
           <div className="flex justify-between py-4">
             <Date dateString={postData.date} />
             <ReadingTime minutes={postData.readingTime} />
