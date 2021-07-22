@@ -34,12 +34,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-20 py-6 bg-gray-300">
+    <section id="contact" className="px-20 py-6 bg-gray-300 mx-auto
+      max-w-screen-sm
+      md:max-w-screen-md">
       <h2 className="text-4xl py-4">Charlemos!</h2>
       <p className="text-xl pb-4">Interesado en trabajar conmigo?</p>
       <p className="text-xl pb-8">Contame sobre tu proyecto y vemos que se puede hacer.</p>
 
-      <form className="grid grid-cols-2 gap-6" onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-2 gap-6"
+      >
         <Input name="name" type="text" text="Nombre" />
 
         <Input name="email" type="email" text="Email" />
