@@ -7,14 +7,14 @@ export default function Header() {
         <h1 className="">
           <Link href="/">Ele Morelli</Link>
         </h1>
-        <ul className="flex justify-between w-64">
+        <ul className="flex justify-between w-40 sm:w-64">
           <li className="hover:underline">
             <Link href="/projects">Proyectos</Link>
           </li>
           <li className="hover:underline">
             <Link href="/blog">Blog</Link>
           </li>
-          <li className="hover:underline">
+          <li className="hover:underline hidden sm:block">
             <Link href="/#contact">Contacto</Link>
           </li>
         </ul>

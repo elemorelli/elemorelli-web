@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="flex justify-between p-6 bg-gray-200 ">
+    <footer className="flex justify-between p-6 bg-blue-500 border-t-8 border-blue-700 text-gray-200 ">
       <div>
-        <p className="inline-block">Copyright {new Date().getFullYear()}</p>{" "}
-        <p className="inline-block">Eleazar Morelli Sangil</p>
+        <p>Eleazar Morelli Sangil | {new Date().getFullYear()}</p>
+      </div>
+      <div>
+        <Link href="#">Volver ↑</Link>
       </div>
       <ul className="flex justify-between items-center w-52">
         <li>

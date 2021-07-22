@@ -23,13 +23,7 @@ const typeTextPrompt = async (element, text) => {
 
 const typingWordsLoop = async () => {
   const textPrompt = document.getElementById("text-prompt");
-  const words = [
-    "programador full-stack.",
-    "motociclista.",
-    "entusiasta de la impresión 3D.",
-    "viajero.",
-    "desarrollador web.",
-  ];
+  const words = ["programador full-stack.", "nerd de la impresión 3D.", "viajero motociclista.", "desarrollador web."];
 
   for (let index = 0; ; index++) {
     await sleep(2500);
@@ -55,7 +49,7 @@ export default function Intro() {
   }, []);
 
   return (
-    <section className="text-gray-800 h-screen bg-center bg-cover flex items-center">
+    <section className="h-screen bg-center bg-cover flex items-center">
       {/* bg-hero */}
       <div className="w-full">
         <h1 className="text-6xl text-center mb-4">Hola!</h1>
@@ -68,7 +62,11 @@ export default function Intro() {
           <span className="inline-block animate-blink font-mono">|</span>
         </p>
         <div className="flex justify-center">
-          <button className="text-center border-2 border-black rounded-2xl px-4 py-2">
+          <button
+            className="text-center px-4 py-2 border-2 rounded-xl shadow
+          bg-blue-500 border-blue-700 text-gray-200
+          active:bg-blue-700"
+          >
             <Link href="/#contact">Estoy aceptando nuevos proyectos</Link>
           </button>
         </div>

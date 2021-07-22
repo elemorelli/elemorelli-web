@@ -10,7 +10,7 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head />
-        <body className="bg-gray-300">
+        <body className="bg-gray-300 text-gray-800">
           <Main />
           <NextScript />
         </body>

@@ -22,6 +22,7 @@ module.exports = {
       }),
       fontFamily: {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+        mono: ["Fira Mono", ...defaultTheme.fontFamily.sans],
       },
     },
   },

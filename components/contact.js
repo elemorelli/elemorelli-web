@@ -40,18 +40,16 @@ export default function Contact() {
       <p className="text-xl pb-8">Contame sobre tu proyecto y vemos que se puede hacer.</p>
 
       <form className="grid grid-cols-2 gap-6" onSubmit={handleSubmit}>
-        <Input name="name" type="text" text="Nombre" required />
+        <Input name="name" type="text" text="Nombre" />
 
-        <Input name="email" type="email" text="Email" required />
+        <Input name="email" type="email" text="Email" />
 
-        <Input name="phone" type="tel" text="Teléfono" />
-
-        <Input name="website" type="text" text="Website" />
-
-        <TextArea name="message" text="Mensaje" required />
+        <TextArea name="message" text="Mensaje" />
 
         <input
-          className="col-span-2 w-6/12 h-8 m-auto border-2 rounded-lg shadow border-gray-700"
+          className="col-span-2 w-4/12 h-10 m-auto border-2 rounded-xl shadow text-xl
+          bg-blue-500 border-blue-700 text-gray-200
+          active:bg-blue-700"
           type="submit"
           value="Enviar!"
         ></input>
