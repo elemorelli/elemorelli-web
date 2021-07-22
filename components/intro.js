@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-function sleep(ms = 150) {
+function sleep(ms = 100) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 const selectTextPrompt = async (element) => {
-  element.className = "bg-blue-300 text-white";
+  element.className = "font-mono bg-blue-300 text-white";
 };
 
 const clearTextPrompt = async (element) => {
-  element.className = "";
+  element.className = "font-mono";
   element.textContent = "";
 };
 
@@ -51,7 +51,7 @@ const typingWordsLoop = async () => {
 
 export default function Intro() {
   useEffect(() => {
-    // typingWordsLoop();
+    typingWordsLoop();
   }, []);
 
   return (
@@ -59,7 +59,7 @@ export default function Intro() {
       {/* bg-hero */}
       <div className="w-full">
         <h1 className="text-6xl text-center mb-4">Hola!</h1>
-        <h2 className="text-4xl text-center mb-4">Me llamo Eleazar.</h2>
+        <h2 className="text-4xl text-center mb-4">Me llamo Eleazar</h2>
         <p className="text-xl text-center mb-8">
           <span>Soy un </span>
           <span id="text-prompt" className="font-mono">
@@ -68,11 +68,9 @@ export default function Intro() {
           <span className="inline-block animate-blink font-mono">|</span>
         </p>
         <div className="flex justify-center">
-          <Link href="/#contact">
-            <button className="text-center border-2 border-black rounded-full cursor-pointer px-4 py-2">
-              Estoy aceptando nuevos proyectos
-            </button>
-          </Link>
+          <button className="text-center border-2 border-black rounded-2xl px-4 py-2">
+            <Link href="/#contact">Estoy aceptando nuevos proyectos</Link>
+          </button>
         </div>
       </div>
     </section>
