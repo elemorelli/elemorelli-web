@@ -1,0 +1,15 @@
+---
+import Mountain from "@components/Mountain.astro";
+
+const mountains = [
+  { width: "48", height: "12", bottom: "45%", left: "-5%" },
+  { width: "48", height: "16", bottom: "55%", left: "5%" },
+  { width: "52", height: "24", bottom: "45%", left: "15%" },
+  { width: "52", height: "24" },
+];
+---
+
+<div id="mountain">
+  <div id="horizon" class="absolute top-[55%] z-40 w-full h-1 bg-white blur-xs"></div>
+  {mountains.map((mountain) => <Mountain {...mountain} />)}
+</div>

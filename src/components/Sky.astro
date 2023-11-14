@@ -1,0 +1,31 @@
+<div
+  id="sky"
+  class="absolute w-full h-[55%] bg-gradient-to-b from-slate-900 from-30% via-purple-900 via-75% to-rose-500 shadow-lg shadow-purple-700">
+  <div class="h-px"></div>
+  <div
+    id="sun"
+    class="absolute top-[50%] inset-x-0 overflow-hidden z-10 w-64 max-w-64 h-64 max-h-64 bg-gradient-to-b from-rose-500 to-amber-500 rounded-full">
+  </div>
+</div>
+
+<style>
+  #sun {
+    box-shadow:
+      inset 0 0 20px theme("colors.fuchsia.800"),
+      0 0 120px theme("colors.fuchsia.800"),
+      0 35vh 400px theme("colors.sky.200");
+  }
+</style>
+
+<script>
+  const sky = document.getElementById("sky");
+
+  for (let i = 0; i < 250; i++) {
+    const stars = document.createElement("div");
+    stars.setAttribute("class", "w-px h-px bg-white absolute");
+    stars.style.left = 100 * Math.random() + "%";
+    stars.style.top = 80 * Math.random() + "%";
+
+    sky.appendChild(stars);
+  }
+</script>
