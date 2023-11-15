@@ -6,14 +6,14 @@ const randomize = (value) => {
 };
 
 const mountains = [
-  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, left: "-5%" },
-  { width: `${randomize(24)}vw`, height: `${randomize(5.5)}rem`, left: "5%" },
-  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, left: "15%" },
-  { width: `${randomize(30)}vw`, height: `${randomize(8.5)}rem`, left: "30%" },
-  { width: `${randomize(30)}vw`, height: `${randomize(10)}rem`, right: "30%" },
-  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, right: "15%" },
-  { width: `${randomize(24)}vw`, height: `${randomize(5.5)}rem`, right: "5%" },
-  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, right: "-5%" },
+  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, left: `${randomize(-5)}%` },
+  { width: `${randomize(24)}vw`, height: `${randomize(5.5)}rem`, left: `${randomize(5)}%` },
+  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, left: `${randomize(15)}%` },
+  { width: `${randomize(30)}vw`, height: `${randomize(8.5)}rem`, left: `${randomize(30)}%` },
+  { width: `${randomize(30)}vw`, height: `${randomize(10)}rem`, right: `${randomize(30)}%` },
+  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, right: `${randomize(15)}%` },
+  { width: `${randomize(24)}vw`, height: `${randomize(5.5)}rem`, right: `${randomize(5)}%` },
+  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, right: `${randomize(-5)}%` },
 ].sort(() => Math.random() - 0.5);
 ---
 
