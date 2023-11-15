@@ -1,18 +1,16 @@
 ---
-const { width, height, top, right, bottom, left } = Astro.props;
+const { width, height, top = "auto", right = "auto", bottom = "auto", left = "auto" } = Astro.props;
+console.log({ width, height, top, right, bottom, left });
 ---
 
-<div
-  class=`absolute z-30 bg-gradient-to-b from-black to-zinc-800
-	w-${width} h-${height} max-h-${height} 
-	${top? "top-[" + top + "]" : "top-auto"}
-	${right? "right-[" + right + "]" : "right-auto"}
-	${bottom? "bottom-[" + bottom + "]" : "bottom-auto"}
-	${left? "left-[" + left + "]" : "left-auto"}`>
-</div>
+<div class="absolute z-10 bg-gradient-to-b from-black to-zinc-800"></div>
 
-<style>
+<style define:vars={{ width, height, top, right, bottom, left }}>
   div {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: var(--width);
+    height: var(--height);
+    max-height: var(--height);
+    inset: var(--top) var(--right) var(--bottom) var(--left);
   }
 </style>
