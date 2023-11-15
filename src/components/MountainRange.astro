@@ -1,16 +1,20 @@
 ---
 import Mountain from "@components/Mountain.astro";
 
+const randomize = (value) => {
+  return value + (Math.random() < 0.5 ? -1 : 1);
+};
+
 const mountains = [
-  { width: "24vw", height: "6vw", bottom: "45%", left: "-5%" },
-  { width: "24vw", height: "8vw", bottom: "45%", left: "5%" },
-  { width: "30vw", height: "10vw", bottom: "45%", left: "15%" },
-  { width: "30vw", height: "14vw", bottom: "45%", left: "30%" },
-  { width: "30vw", height: "18vw", right: "30%", bottom: "45%" },
-  { width: "30vw", height: "10vw", right: "15%", bottom: "45%" },
-  { width: "24vw", height: "8vw", right: "5%", bottom: "45%" },
-  { width: "24vw", height: "6vw", right: "-5%", bottom: "45%" },
-];
+  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, left: "-5%" },
+  { width: `${randomize(24)}vw`, height: `${randomize(5)}rem`, left: "5%" },
+  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, left: "15%" },
+  { width: `${randomize(30)}vw`, height: `${randomize(8)}rem`, left: "30%" },
+  { width: `${randomize(30)}vw`, height: `${randomize(10)}rem`, right: "30%" },
+  { width: `${randomize(30)}vw`, height: `${randomize(6)}rem`, right: "15%" },
+  { width: `${randomize(24)}vw`, height: `${randomize(5)}rem`, right: "5%" },
+  { width: `${randomize(24)}vw`, height: `${randomize(4)}rem`, right: "-5%" },
+].sort(() => Math.random() - 0.5);
 ---
 
 <div id="mountain">
