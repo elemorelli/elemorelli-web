@@ -1,7 +1,6 @@
 <div
-  class="fixed z-50 top-auto right-[5%] bottom-[5%] left-auto flex justify-around border border-solid border-white rounded">
+  class="fixed z-40 top-auto right-[5%] bottom-[5%] left-auto flex justify-around border border-solid border-white rounded">
   <a href="https://github.com/elemorelli/" target="_blank" class="text-white py-2 px-4 transition-all">
-    <!-- <Icon icon="github" alt="The GitHub logo" /> -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -16,7 +15,6 @@
     </svg>
   </a>
   <a href="https://www.linkedin.com/in/elemorelli/" target="_blank" class="text-lg text-white py-2 px-4 transition-all">
-    <!-- <Icon icon="linkedin" alt="The LinkedIn Logo" /> -->
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +30,6 @@
     </svg>
   </a>
   <button id="show-contact-form" class="text-lg text-white py-2 px-4 transition-all">
-    <!-- <Icon icon="envelope" alt="An envelope icon" /> -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -60,6 +57,7 @@
 <script>
   const showContactFormButton = document.getElementById("show-contact-form");
   showContactFormButton.addEventListener("click", () => {
-    console.log("TODO: Contact form");
+    const contactForm = document.getElementById("contact-form");
+    contactForm.classList.remove("hidden");
   });
 </script>
