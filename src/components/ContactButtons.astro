@@ -15,7 +15,6 @@
     </svg>
   </a>
   <a href="https://www.linkedin.com/in/elemorelli/" target="_blank" class="text-lg text-white py-2 px-4 transition-all">
-
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -55,9 +54,16 @@
 </style>
 
 <script>
-  const showContactFormButton = document.getElementById("show-contact-form");
-  showContactFormButton.addEventListener("click", () => {
+  const showContactForm = () => {
+    const slideOver = document.getElementById("slide-over");
+    const backdrop = document.getElementById("backdrop");
     const contactForm = document.getElementById("contact-form");
-    contactForm.classList.remove("hidden");
-  });
+    slideOver.classList.remove("invisible");
+    backdrop.classList.add("opacity-50");
+    backdrop.classList.remove("opacity-0");
+    contactForm.classList.remove("translate-y-full");
+  };
+
+  const showContactFormButton = document.getElementById("show-contact-form");
+  showContactFormButton.addEventListener("click", showContactForm);
 </script>
