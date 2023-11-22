@@ -1,11 +1,12 @@
 <div id="slide-over" class="invisible">
   <div
     id="backdrop"
-    class="absolute z-50 inset-0 w-full h-full bg-gray-900 opacity-0 duration-500 ease-out transition-all">
+    class="absolute z-50 inset-0 w-full h-full bg-gray-900 opacity-0 duration-200 ease-out transition-all">
   </div>
+
   <div
     id="contact-form"
-    class="absolute z-50 bottom-0 left-0 right-0 w-96 h-auto translate-y-full bg-gray-100 duration-500 ease-out transition-all rounded-t-lg">
+    class="absolute z-50 bottom-0 left-0 right-0 w-96 md:w-128 lg:w-192 max-w-[90%] h-auto translate-y-full bg-gray-100 duration-200 ease-out transition-all rounded-t-lg">
     <div
       id="close-button"
       class="absolute top-0 right-0 w-10 h-10 flex items-center justify-center mt-2 mr-2 cursor-pointer text-gray-800">
@@ -20,40 +21,100 @@
       </svg>
     </div>
 
-    <form class="w-full my-8 px-8 flex items-center justify-center flex-col font-consolas">
-      <div class="mb-4 w-full">
-        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-        <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-md" required />
-      </div>
+    <form
+      id="form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot
+      class="w-full my-8 px-8 flex items-center justify-center flex-col font-consolas">
+      <fieldset id="fieldset" class="w-full">
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
 
-      <div class="mb-4 w-full">
-        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-        <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-md" required />
-      </div>
+        <div class="flex flex-col md:flex-row md:gap-4">
+          <div class="mb-4 w-full">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+            <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-md" required />
+          </div>
 
-      <div class="mb-4 w-full">
-        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-md" required></textarea>
-      </div>
+          <div class="mb-4 w-full">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-md" required />
+          </div>
+        </div>
 
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Submit</button>
+        <div class="mb-4 w-full">
+          <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+          <textarea id="message" name="message" class="w-full px-3 py-2 border rounded-md h-32 md:h-24" required
+          ></textarea>
+        </div>
+
+        <button id="submit-button" type="submit" class="bg-purple-500 text-white px-4 py-2 rounded-md w-full"
+          >Submit</button
+        >
+      </fieldset>
     </form>
   </div>
 </div>
 
 <script>
+  const slideOver = document.getElementById("slide-over");
+  const backdrop = document.getElementById("backdrop");
+  const contactForm = document.getElementById("contact-form");
+  const form = document.getElementById("form") as HTMLFormElement;
+  const fieldset = document.getElementById("fieldset") as HTMLFieldSetElement;
+  const closeButton = document.getElementById("close-button") as HTMLButtonElement;
+  const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
+
   const closeModal = () => {
-    const slideOver = document.getElementById("slide-over");
-    const backdrop = document.getElementById("backdrop");
-    const contactForm = document.getElementById("contact-form");
-    backdrop.classList.add("opacity-0");
-    backdrop.classList.remove("opacity-50");
-    contactForm.classList.add("translate-y-full");
-    slideOver.classList.add("invisible");
+    return new Promise<void>((resolve) => {
+      backdrop.classList.add("opacity-0");
+      backdrop.classList.remove("opacity-50");
+      contactForm.classList.add("translate-y-full");
+      slideOver.classList.add("invisible");
+      resolve();
+    });
   };
 
-  const backdrop = document.getElementById("backdrop");
-  const closeButton = document.getElementById("close-button");
+  const disableForm = () => {
+    fieldset.setAttribute("disabled", "true");
+    submitButton.innerHTML = "Submiting...";
+    submitButton.classList.add("bg-purple-800");
+    submitButton.classList.remove("bg-purple-500");
+  };
+
+  const resetForm = () => {
+    fieldset.removeAttribute("disabled");
+    submitButton.innerHTML = "Submit";
+    submitButton.classList.add("bg-purple-500");
+    submitButton.classList.remove("bg-purple-800");
+    form.reset();
+  };
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      disableForm();
+
+      const formData = new FormData(event.target);
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      await closeModal();
+      resetForm();
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   backdrop.addEventListener("click", closeModal);
   closeButton.addEventListener("click", closeModal);
+  form.addEventListener("submit", handleSubmit);
 </script>

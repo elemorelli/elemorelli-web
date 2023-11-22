@@ -14,6 +14,10 @@ module.exports = {
       dropShadow: {
         synth: ["0 0 2px #fff", "0 0 6px #fff", "0 0 8px #DC2626", "0 0 10px #DC2626"],
       },
+      width: {
+        '128': '32rem',
+        '192': '48rem',
+      },
       animation: {
         neon: "neon 1.7s infinite alternate",
         "neon-reverse": "neon 1.7s infinite alternate-reverse",
