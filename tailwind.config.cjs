@@ -8,15 +8,14 @@ module.exports = {
     extend: {
       fontFamily: {
         streamster: ["streamster", ...defaultTheme.fontFamily.sans],
-        metro: ["metropolis", ...defaultTheme.fontFamily.sans],
-        consolas: ["consolas", ...defaultTheme.fontFamily.sans],
+        montserrat: ["montserrat", ...defaultTheme.fontFamily.sans],
       },
       dropShadow: {
         synth: ["0 0 2px #fff", "0 0 6px #fff", "0 0 8px #DC2626", "0 0 10px #DC2626"],
       },
       width: {
-        '128': '32rem',
-        '192': '48rem',
+        128: "32rem",
+        192: "48rem",
       },
       animation: {
         neon: "neon 1.7s infinite alternate",
