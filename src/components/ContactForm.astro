@@ -60,3 +60,61 @@
     </form>
   </div>
 </div>
+
+<script>
+  const slideOver = document.getElementById("slide-over");
+  const backdrop = document.getElementById("backdrop");
+  const contactForm = document.getElementById("contact-form");
+  const form = document.getElementById("form") as HTMLFormElement;
+  const fieldset = document.getElementById("fieldset") as HTMLFieldSetElement;
+  const closeButton = document.getElementById("close-button") as HTMLButtonElement;
+  const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
+
+  const closeModal = () => {
+    return new Promise<void>((resolve) => {
+      backdrop.classList.add("opacity-0");
+      backdrop.classList.remove("opacity-50");
+      contactForm.classList.add("translate-y-full");
+      slideOver.classList.add("invisible");
+      resolve();
+    });
+  };
+
+  const disableForm = () => {
+    fieldset.setAttribute("disabled", "true");
+    submitButton.innerHTML = "Submiting...";
+    submitButton.classList.add("bg-purple-800");
+    submitButton.classList.remove("bg-purple-500");
+  };
+
+  const resetForm = () => {
+    fieldset.removeAttribute("disabled");
+    submitButton.innerHTML = "Submit";
+    submitButton.classList.add("bg-purple-500");
+    submitButton.classList.remove("bg-purple-800");
+    form.reset();
+  };
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      disableForm();
+
+      const formData = new FormData(event.target);
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      await closeModal();
+      resetForm();
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  backdrop.addEventListener("click", closeModal);
+  closeButton.addEventListener("click", closeModal);
+  form.addEventListener("submit", handleSubmit);
+</script>
