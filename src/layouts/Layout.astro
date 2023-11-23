@@ -24,17 +24,14 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
 
     <SEO
-      title="Ele Morelli"
-      description="Ele Morelli"
-      twitter={{
-        creator: "@elemorelli",
-        site: "@elemorelli",
-        card: "summary_large_image",
-      }}
+      title={title}
+      titleTemplate="%s | Ele Morelli - Fullstack Developer"
+      titleDefault="Ele Morelli - Fullstack Developer"
+      description="The personal webpage of Eleazar Morelli, a Fullstack Developer based in Argentina"
       openGraph={{
         basic: {
           type: "website",
-          title: `Ele Morelli`,
+          title: "Ele Morelli - Fullstack Developer",
           image: resolvedImageWithDomain,
         },
         image: {
