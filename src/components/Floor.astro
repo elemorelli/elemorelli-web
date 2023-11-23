@@ -4,12 +4,12 @@ const grid = [...Array(640).keys()];
 
 <div
   id="floor"
-  class="absolute w-[180%] h-full bg-fuchsia-900 grid grid-rows-floor grid-cols-floor top-0 right-0 bottom-[-23%] left-[-40%] animate-gridZ">
+  class="absolute w-[180%] h-full bg-fuchsia-900 grid grid-rows-floor grid-cols-floor top-0 right-0 bottom-[-23%] left-[-40%] animate-gridz">
   {grid.map(() => <div class="w-full h-full border-slate-200 border-solid border blur-xs" />)}
 </div>
 
 <style>
   #floor {
-    transform: perspective(60vh) rotateX(75deg) translateY(-6.25vh);
+    transform: perspective(60vh) rotateX(75deg) translateY(-6.25vh) translateZ(0);
   }
 </style>
